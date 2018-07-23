@@ -1,4 +1,5 @@
 const app = require("./app");
+const mongoose = require("mongoose");
 
 mongoose.connect("mongodb://localhost/jumpstart");
 const db = mongoose.connection;
