@@ -10,6 +10,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
+// const whitelist = [""]
 app.use(cors());
 
 app.use('/', index);

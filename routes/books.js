@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Book = require('../models/book');
-const mongoose = require('mongoose');
+const cors = require('cors');
 
+router.use(cors());
 const tryWrapper = (asyncMiddleware) => {
 	try {
 		return async (req, res, next) => {
