@@ -10,7 +10,15 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
-// const whitelist = [""]
+if (process.env.NODE_ENV === 'production') {
+	app.use(
+		cors({
+			origin: process.env.ALLOWED_ORIGIN
+		})
+	);
+} else {
+	app.use(cors());
+}
 app.use(cors());
 
 app.use('/', index);
